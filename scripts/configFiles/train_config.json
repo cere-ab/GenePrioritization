@@ -1,0 +1,10 @@
+{
+    "epochs" : 60000,
+    "classList" : "['P', 'LP', 'WN', 'LN', 'RN']",
+    "lr" : 0.0005,
+    "weight_decay" : 0,
+    "projRootPath" : "<absolute-path-to-project-root>/GenePrioritization",
+    "modelsPath" : "/data/Models/",
+    "dataGraph" : "/data/Graphs/",
+    "hw" : "cuda:2"
+}

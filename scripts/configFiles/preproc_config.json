@@ -1,0 +1,14 @@
+{
+    "GDAmapTable" : "geneDiseaseNetwork",
+    "DisAttribTable": "diseaseAttributes",
+    "geneAttribTable": "geneAttributes",
+    "existViewDiseaseQ" : "SELECT name FROM sqlite_master WHERE type=\"view\" AND name=\"DISEASE\"",
+    "dropViewDiseaseQ" : "DROP VIEW DISEASE",
+    "makeViewDiseaseQ" : "CREATE VIEW DISEASE AS SELECT diseaseAttributes.diseaseNID, diseaseAttributes.diseaseID, diseaseAttributes.diseaseName, diseaseAttributes.type as diseaseType, diseaseClass.diseaseClass, diseaseClass.diseaseClassName FROM diseaseAttributes JOIN disease2class ON diseaseAttributes.diseaseNID = disease2class.diseaseNID JOIN diseaseClass ON disease2class.diseaseClassNID = diseaseClass.diseaseClassNID",
+    "geneDiseaseEquivQ" : "SELECT geneAttributes.geneID, geneAttributes.geneName, geneAttributes.geneDescription, geneAttributes.DSI, geneAttributes.DPI, DISEASE.diseaseId, DISEASE.diseaseName, DISEASE.diseaseType, DISEASE.diseaseClass, DISEASE.diseaseClassName, geneDiseaseNetwork.source, geneDiseaseNetwork.association, geneDiseaseNetwork.associationType, geneDiseaseNetwork.pmid, geneDiseaseNetwork.score, geneDiseaseNetwork.EL, geneDiseaseNetwork.EI, geneDiseaseNetwork.year FROM geneAttributes JOIN geneDiseaseNetwork ON geneAttributes.geneNID = geneDiseaseNetwork.geneNID JOIN DISEASE ON geneDiseaseNetwork.diseaseNID = DISEASE.diseaseNID",
+    "projRootPath" : "<absolute-path-to-project-root>/GenePrioritization",
+    "dbFileName" : "/data/disgenet_2020.db",
+    "bioGRID" : "/data/BIOGRID-ORGANISM-Homo_sapiens-4.4.206.tab3.txt",
+    "gdaTSV" : "/data/gda.tsv",
+    "graphsPath" : "/data/Graphs/"
+}
