@@ -107,6 +107,7 @@ def main():
 
     """
     cfgFile = str(Path(__file__).parent.absolute() / "configFiles/train_config.json")
+    DLobj = Trainer(cfgFile)    #NOTE: Have to advance define the Trainer object to be able to utilize the __init__() config!
 
     # Preparing the data object
     print("Starting the file {}\n".format(str(__file__)))
@@ -128,7 +129,7 @@ def main():
 
     # Creating an object for the trainer class
     print('preparing the trainer...', end='')
-    DLobj = Trainer(cfgFile)
+    
     DLobj.setOptimAndLossFn(model)  #FIXME: Bad design!
 
     train_mask = data['train_mask']
